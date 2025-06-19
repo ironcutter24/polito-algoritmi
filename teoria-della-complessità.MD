@@ -1,14 +1,14 @@
 | $\textbf{Algorithm}$     | $\mathbf{\Omega} \textbf{ (Best)}$ | $\mathbf{\Theta} \textbf{ (Average)}$ | $\textbf{O (Worst)}$ | $\textbf{In-place}$ | $\textbf{Stable}$ | $\textbf{Notes}$                |
 | ------------------------ | ---------------------------------- | ------------------------------------- | -------------------- | ------------------- | ----------------- | ------------------------------- |
-| ==**Quadratic**==        |                                    |                                       |                      |                     |                   |                                 |
+| **Quadratic**        |                                    |                                       |                      |                     |                   |                                 |
 | **Insertion Sort**       | $O(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Great for nearly-sorted data    |
 | **Bubble Sort**          | $O(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Easy but slow                   |
 | **Selection Sort**       | $O(n^2)$                           | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ❌                | Simple but inefficient          |
 | **Shell Sort**           | $O(n \log n)$*                     | $Θ(n \log^2 n)$*                      | $O(n^2)$*            | ✅                  | ❌                | Depends on gap sequence         |
-| ==**Linear**==           |                                    |                                       |                      |                     |                   |                                 |
+| **Linear**           |                                    |                                       |                      |                     |                   |                                 |
 | **Counting Sort**        | $O(n + k)$                         | $Θ(n + k)$                            | $O(n + k)$           | ❌                  | ✅                | Only for small integer ranges   |
 | **Radix Sort**           | $O(nk)$                            | $Θ(nk)$                               | $O(nk)$              | ❌                  | ✅                | For fixed-length keys           |
-| ==**Linearithmic**==     |                                    |                                       |                      |                     |                   |                                 |
+| **Linearithmic**     |                                    |                                       |                      |                     |                   |                                 |
 | **Bottom-Up Merge Sort** | $O(n \log n)$                      | $Θ(n \log n)$                         | $O(n \log n)$        | ❌                  | ✅                | Iterative variant of Merge Sort |
 | ~~**Merge Sort**~~           | $O(n \log n)$                      | $Θ(n \log n)$                         | $O(n \log n)$        | ❌                  | ✅                | Divide & conquer                |
 | ~~**Quick Sort**~~           | $O(n \log n)$                      | $Θ(n \log n)$                         | $O(n^2)$             | ✅                  | ❌                | Fast but unstable               |
