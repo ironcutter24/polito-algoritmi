@@ -1,5 +1,5 @@
-# Quadratici
-> [!info] $\quad O(n^2)$
+# Quadratici - $\quad O(n^2)$
+> $O(n^2)$
 
 ---
 
@@ -135,7 +135,7 @@ void ShellSort(int A[], int N) {
 ```
 
 # Lineari
-> [!info] $\quad O(n + k)$ / $O(nk)$
+> $O(n + k)$ / $O(nk)$
 
 ---
 
@@ -193,7 +193,7 @@ void radixSort(int A[], int B[], int C[], int D[], int n) {
 ```
 
 # Linearitmici
-> [!info] $\quad O(n \log n)$
+> $O(n \log n)$
 
 ---
 
