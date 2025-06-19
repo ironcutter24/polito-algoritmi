@@ -1,7 +1,7 @@
 # Quadratici
 > $O(n^2)$
 
-### Insertion sort
+## Insertion sort
 > Great for nearly-sorted data
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -26,7 +26,7 @@ void InsertionSort(int A[], int N) {
 }
 ```
 
-### Exchange / Bubble sort
+## Exchange / Bubble sort
 > Easy but slow
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -71,7 +71,7 @@ void OptBubbleSort(int A[], int N) {
 }
 ```
 
-### Selection sort
+## Selection sort
 > Simple but inefficient
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -101,7 +101,7 @@ void SelectionSort(int A[], int N) {
 }
 ```
 
-### Shell sort
+## Shell sort
 > Depends on gap sequence
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -135,7 +135,7 @@ void ShellSort(int A[], int N) {
 # Lineari
 > $O(n + k)$ / $O(nk)$
 
-### Counting sort
+## Counting sort
 > Only for small integer ranges
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -166,7 +166,7 @@ void CountingSort(int A[],int B[],int C[],int N,int k){
 }
 ```
 
-### Radix sort
+## Radix sort
 > For fixed-length keys
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -193,7 +193,7 @@ void radixSort(int A[], int B[], int C[], int D[], int n) {
 
 ---
 
-### Bottom-up Merge sort
+## Bottom-up Merge sort
 > Iterative variant of Merge Sort
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
