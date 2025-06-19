@@ -1,4 +1,5 @@
-# Quadratici\( - $O(n^2)$\)
+# Quadratici
+$O(n^2)$
 
 ---
 
