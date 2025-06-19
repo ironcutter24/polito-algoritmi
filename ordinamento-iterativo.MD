@@ -1,7 +1,5 @@
 # Quadratici
-$O(n^2)$
-
----
+> $O(n^2)$
 
 ### Insertion sort
 > Great for nearly-sorted data
@@ -134,9 +132,8 @@ void ShellSort(int A[], int N) {
 }
 ```
 
-# Lineari<span> - $O(n + k)$ / $O(nk)$</span>
-
----
+# Lineari
+> $O(n + k)$ / $O(nk)$
 
 ### Counting sort
 > Only for small integer ranges
@@ -191,7 +188,8 @@ void radixSort(int A[], int B[], int C[], int D[], int n) {
 }
 ```
 
-# Linearitmici<span> - $O(n \log n)$</span>
+# Linearitmici
+> $O(n \log n)$
 
 ---
 
