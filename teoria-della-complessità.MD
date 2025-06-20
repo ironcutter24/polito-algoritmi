@@ -4,7 +4,7 @@
 | **Insertion Sort**       | $\Omega(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Great for nearly-sorted data    |
 | **Bubble Sort**          | $\Omega(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Easy but slow                   |
 | **Selection Sort**       | $\Omega(n^2)$                           | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ❌                | Simple but inefficient          |
-| **Shell Sort**           | $\Omega(n \log n)$*                     | $Θ(n \log^2 n)$*                      | $O(n^2)$*            | ✅                  | ❌                | Depends on gap sequence         |
+| **Shell Sort**           | $\Omega(n \log n)^*$                     | $Θ(n \log^2 n)^*$                      | $O(n^2)^*$            | ✅                  | ❌                | Depends on gap sequence         |
 | **Linear**           |                                    |                                       |                      |                     |                   |                                 |
 | **Counting Sort**        | $\Omega(n + k)$                         | $Θ(n + k)$                            | $O(n + k)$           | ❌                  | ✅                | Only for small integer ranges   |
 | **Radix Sort**           | $\Omega(nk)$                            | $Θ(nk)$                               | $O(nk)$              | ❌                  | ✅                | For fixed-length keys           |
