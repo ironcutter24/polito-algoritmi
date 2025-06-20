@@ -111,7 +111,7 @@ void SelectionSort(int A[], int N) {
 ```
 
 ### Shell sort
-> An efficient generalization of [[#Insertion sort]] that allows **comparison and exchange of elements far apart**. Although not stable, it's in-place and **works well for medium-sized datasets**.
+> An efficient generalization of Insertion sort that allows **comparison and exchange of elements far apart**. Although not stable, it's in-place and **works well for medium-sized datasets**.
 
 | $\textbf{Best}$      | $\textbf{Average}$     | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | -------------------- | ---------------------- | ---------------- | ------------------- | ----------------- |
@@ -121,9 +121,13 @@ _*Depends on gap sequence_
 
 > Knuth's Gap Sequence
 > The gap sequence proposed by Donald Knuth is defined as:  
+> 
 > $$h_k = \frac{3^k - 1}{2}$$  
+>
 > Which gives a sequence like:  
+> 
 > $$1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots$$  
+> 
 > $O(n^{3/2})$ in the worst case.
 
 ```C title:ShellSort.c fold
