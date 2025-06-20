@@ -231,7 +231,7 @@ void Merge(int A[], int B[], int l, int q, int r, int m) {
             B[k] = A[i++];
         else
 	        B[k] = A[j++];
-	}
+    }
 	        
     for ( k = l; k <= r; k++ )
         A[k] = B[k];
