@@ -106,7 +106,7 @@ void SelectionSort(int A[], int N) {
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | ------------------------ | ---------------------------------- | ------------------------------------- | -------------------- | ------------------- |
-| $\Omega (n \log n)$*                     | $\Theta (n \log^2 n)$*                      | $O(n^2)$*            | ✅                  | ❌                |     
+| $\Omega (n \log n)^*$                     | $\Theta (n \log^2 n)^*$                      | $O(n^2)^*$            | ✅                  | ❌                |     
 
 ```C title:ShellSort.c fold
 void ShellSort(int A[], int N) {  
