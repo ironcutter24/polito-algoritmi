@@ -4,7 +4,7 @@
 ---
 
 ### Insertion sort
-> A simple and intuitive algorithm that builds the sorted list one element at a time, inserting each new element into its correct position among the already sorted ones. It performs well on **small** or **nearly sorted** arrays.
+> A simple and intuitive algorithm that builds the sorted list one element at a time, inserting each new element into its correct position among the already sorted ones. It performs well on **small** or **nearly sorted** arrays.  
 > It's in-place and stable, making it a good choice for online sorting and as a base case for more complex algorithms like **Merge Sort** or **Quick Sort** in hybrid implementations.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -119,11 +119,11 @@ void SelectionSort(int A[], int N) {
 
 _*Depends on gap sequence_
 
-> [!info]- Knuth's Gap Sequence
->The gap sequence proposed by Donald Knuth is defined as:
-> $$h_k = \frac{3^k - 1}{2}$$
-> Which gives a sequence like:
-> $$1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots$$
+> Knuth's Gap Sequence
+> The gap sequence proposed by Donald Knuth is defined as:  
+> $$h_k = \frac{3^k - 1}{2}$$  
+> Which gives a sequence like:  
+> $$1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots$$  
 > $O(n^{3/2})$ in the worst case.
 
 ```C title:ShellSort.c fold
@@ -158,7 +158,7 @@ void ShellSort(int A[], int N) {
 
 ### Counting sort
 > A non-comparison sorting algorithm that works by **counting the occurrences of each unique value**. Ideal for small integer ranges where the maximum value $k$ isn’t drastically larger than the number of elements $n$.  
-> It runs in linear time but isn't in-place and consumes $O(k)$ extra space. It’s stable and often used as a subroutine in [[#Radix sort]].
+> It runs in linear time but isn't in-place and consumes $O(k)$ extra space. It’s stable and often used as a subroutine in Radix sort.
 
 | $\textbf{Best}$  | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | ---------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -190,7 +190,7 @@ void CountingSort(int A[],int B[],int C[],int N,int k){
 ```
 
 ### Radix sort
-> A digit-wise non-comparison sorting algorithm, typically used for sorting integers or strings of fixed length. It **processes elements from the least significant digit** to the most, often using [[#Counting sort]] as a stable intermediate step.  
+> A digit-wise non-comparison sorting algorithm, typically used for sorting integers or strings of fixed length. It **processes elements from the least significant digit** to the most, often using Counting sort as a stable intermediate step.  
 > It has linear complexity when the number of digits $k$ is constant or small relative to $n$, but requires extra space and isn’t in-place. Performs **best when input sizes are large** and the keys are bounded.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
