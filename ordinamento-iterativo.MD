@@ -4,8 +4,8 @@
 ---
 
 ### Insertion sort
-> A simple and intuitive algorithm that builds the sorted list one element at a time, inserting each new element into its correct position among the already sorted ones. It performs well on **small** or **nearly sorted** arrays.  
-> It's in-place and stable, making it a good choice for online sorting and as a base case for more complex algorithms like **Merge Sort** or **Quick Sort** in hybrid implementations.
+> Un algoritmo semplice e intuitivo che costruisce la lista ordinata un elemento alla volta, inserendo ciascun nuovo elemento nella posizione corretta tra quelli già ordinati. Funziona bene su array **piccoli** o **quasi ordinati**.  
+> È in-place e stabile, quindi adatto all’ordinamento online e come caso base in algoritmi più complessi come **Merge Sort** o **Quick Sort** in implementazioni ibride.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | --------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -31,8 +31,8 @@ void InsertionSort(int A[], int N) {
 ```
 
 ### Exchange / Bubble sort
-> A basic algorithm that repeatedly steps through the list, **compares adjacent elements**, and **swaps them** if they're in the wrong order. Though easy to implement and understand, it's highly inefficient for large datasets.  
-> The optimized variant introduces a flag to detect early termination if no swaps are performed in a pass. Despite this, it remains unsuitable for performance-critical tasks.
+> Un algoritmo di base che passa ripetutamente attraverso la lista, **confronta gli elementi adiacenti** e **li scambia** se sono nell’ordine sbagliato. Sebbene sia facile da implementare e comprendere, è molto inefficiente su grandi dataset.  
+> La variante ottimizzata introduce una flag per interrompere in anticipo se non vengono effettuati scambi in un passaggio. Tuttavia, rimane inadatto per compiti critici in termini di prestazioni.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | --------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -79,8 +79,8 @@ void OptBubbleSort(int A[], int N) {
 ```
 
 ### Selection sort
-> A simple comparison-based algorithm that repeatedly **selects the minimum element** from the unsorted part and **places it at the beginning**. It performs the minimum number of swaps $O(n)$, but its quadratic number of comparisons makes it inefficient on large arrays.  
-> It's in-place but not stable, which limits its use in practice.
+> Un algoritmo semplice basato su confronti che seleziona ripetutamente **l’elemento minimo** dalla parte non ordinata e lo **porta all’inizio**. Esegue il numero minimo di scambi ($O(n)$), ma il numero quadratico di confronti lo rende inefficiente su array grandi.  
+> È in-place ma non stabile, il che ne limita l’uso pratico.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | --------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -111,7 +111,7 @@ void SelectionSort(int A[], int N) {
 ```
 
 ### Shell sort
-> An efficient generalization of Insertion sort that allows **comparison and exchange of elements far apart**. Although not stable, it's in-place and **works well for medium-sized datasets**.
+> Una generalizzazione efficiente dell’**Insertion Sort** che permette di **confrontare e scambiare elementi lontani tra loro**. Anche se non è stabile, è in-place e **funziona bene su dataset di medie dimensioni**.
 
 | $\textbf{Best}$      | $\textbf{Average}$     | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | -------------------- | ---------------------- | ---------------- | ------------------- | ----------------- |
@@ -119,16 +119,10 @@ void SelectionSort(int A[], int N) {
 
 _*Depends on gap sequence_
 
-> Knuth's Gap Sequence
-> The gap sequence proposed by Donald Knuth is defined as:  
-> 
-> $$h_k = \frac{3^k - 1}{2}$$  
->
-> Which gives a sequence like:  
-> 
-> $$1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots$$  
-> 
-> $O(n^{3/2})$ in the worst case.
+> [!NOTE]- Knuth's Gap Sequence
+> La sua complessità dipende dalla sequenza di intervalli (gap) usata. La sequenza proposta da Knuth è:
+> $$h_k = \frac{3^k - 1}{2} \quad \quad (1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots)$$
+> Nel caso peggiore, può arrivare a $O(n^{3/2})$.
 
 ```C title:ShellSort.c fold
 void ShellSort(int A[], int N) {
@@ -161,8 +155,8 @@ void ShellSort(int A[], int N) {
 ---
 
 ### Counting sort
-> A non-comparison sorting algorithm that works by **counting the occurrences of each unique value**. Ideal for small integer ranges where the maximum value $k$ isn’t drastically larger than the number of elements $n$.  
-> It runs in linear time but isn't in-place and consumes $O(k)$ extra space. It’s stable and often used as a subroutine in Radix sort.
+> Un algoritmo di ordinamento che **non si basa su confronti**, ma conta il numero di occorrenze di ogni valore unico. È ideale per insiemi di interi **con intervalli piccoli**, dove il valore massimo $k$ non è molto più grande del numero di elementi $n$.  
+> Ha complessità lineare, ma **non è in-place** e usa spazio extra $O(k)$. È stabile e spesso usato come sottoprocedura nel [[#Radix sort]].
 
 | $\textbf{Best}$  | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | ---------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -194,8 +188,8 @@ void CountingSort(int A[],int B[],int C[],int N,int k){
 ```
 
 ### Radix sort
-> A digit-wise non-comparison sorting algorithm, typically used for sorting integers or strings of fixed length. It **processes elements from the least significant digit** to the most, often using Counting sort as a stable intermediate step.  
-> It has linear complexity when the number of digits $k$ is constant or small relative to $n$, but requires extra space and isn’t in-place. Performs **best when input sizes are large** and the keys are bounded.
+> Un algoritmo di ordinamento non basato su confronti che lavora **cifra per cifra**, spesso su interi o stringhe di lunghezza fissa. **Processa le cifre dalla meno significativa alla più significativa**, spesso usando il [[#Counting Sort]] come passo intermedio stabile.  
+> Ha complessità lineare quando il numero di cifre $k$ è costante o piccolo rispetto a $n$, ma richiede spazio extra e **non è in-place**. Funziona **molto bene su insiemi grandi** con chiavi limitate.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | --------------- | ------------------ | ---------------- | ------------------- | ----------------- |
@@ -222,8 +216,8 @@ void radixSort(int A[], int B[], int C[], int D[], int n) {
 ---
 
 ### Bottom-up Merge sort
-> An iterative version of Merge Sort that eliminates recursion by progressively **merging adjacent subarrays** of increasing size (1, 2, 4, 8, ...).  
-> Like its recursive counterpart, it guarantees $O(n \log n)$ time in all cases, and is stable. However, it requires $O(n)$ extra space and is not in-place. Well-suited for **linked lists** and **external sorting** (e.g. on disk).
+> Una versione **iterativa** del Merge Sort che elimina la ricorsione unendo progressivamente **sotto-array adiacenti** di dimensione crescente (1, 2, 4, 8, ...).  
+> Come la sua controparte ricorsiva, garantisce un tempo di esecuzione di $O(n \log n)$ in tutti i casi ed è **stabile**. Tuttavia, richiede **$O(n)$ di spazio extra** e non è in-place. È particolarmente adatto per **linked lists** e **external sorting**.
 
 | $\textbf{Best}$     | $\textbf{Average}$  | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | ------------------- | ------------------- | ---------------- | ------------------- | ----------------- |
