@@ -119,7 +119,7 @@ void SelectionSort(int A[], int N) {
 
 _*Depends on gap sequence_
 
-> [!NOTE] Knuth's Gap Sequence
+> [!NOTE]
 > La sua complessità dipende dalla sequenza di intervalli (gap) usata. La sequenza proposta da Knuth è:
 > $$h_k = \frac{3^k - 1}{2} \quad \quad (1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots)$$
 > Nel caso peggiore, può arrivare a $O(n^{3/2})$.
