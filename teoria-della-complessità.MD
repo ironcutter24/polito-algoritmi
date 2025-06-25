@@ -45,4 +45,4 @@
 - **Non basato sul confronto**  
   L’algoritmo sfrutta proprietà specifiche degli input, come il fatto che siano interi in un intervallo noto.  
   **Esempi**: Counting Sort, Radix Sort, Bucket Sort  
- >  ✅ **Può essere più veloce di** $O(n \log{n})$ **in casi particolari**
+  >  ✅ **Può essere più veloce di** $O(n \log{n})$ **in casi particolari**
