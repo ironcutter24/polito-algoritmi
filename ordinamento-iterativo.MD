@@ -1,3 +1,26 @@
+| $\textbf{Algorithm}$      | $\textbf{Best}$      | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ | $\textbf{Notes}$                |
+| ------------------------- | -------------------- | ------------------ | ---------------- | ------------------- | ----------------- | ------------------------------- |
+| **Quadratic**             |                      |                    |                  |                     |                   |                                 |
+| [[#Insertion sort]]       | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Great for nearly-sorted data    |
+| [[#Exchange / Bubble sort]]          | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Easy but slow                   |
+| [[#Selection sort]]       | $\Omega(n^2)$        | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ❌                | Simple but inefficient          |
+| [[#Shell sort]]           | $\Omega(n \log n)^*$ | $Θ(n \log^2 n)^*$  | $O(n^2)^*$       | ✅                  | ❌                | Depends on gap sequence         |
+| **Linear**                |                      |                    |                  |                     |                   |                                 |
+| [[#Counting sort]]        | $\Omega(n + k)$      | $Θ(n + k)$         | $O(n + k)$       | ❌                  | ✅                | Only for small integer ranges   |
+| [[#Radix sort]]           | $\Omega(nk)$         | $Θ(nk)$            | $O(nk)$          | ❌                  | ✅                | For fixed-length keys           |
+| **Linearithmic**          |                      |                    |                  |                     |                   |                                 |
+| [[#Bottom-up Merge sort]] | $\Omega(n \log n)$   | $Θ(n \log n)$      | $O(n \log n)$    | ❌                  | ✅                | Iterative variant of Merge Sort |
+
+**🔄 In-place**  
+Vettore di n dati + locazioni di memoria ausiliarie in numero fisso
+
+**🧱 Stabile**  
+Immutato l’ordinamento relativo di dati con ugual valore della chiave  
+(L’ordine in uscita di dati con la stessa chiave è lo stesso dell’ordine in ingresso)
+
+> [!TIP]
+> - [Sorting algorithms visualization — chrislaux.com](https://www.chrislaux.com/miscsort)
+
 # Quadratici
 > $O(n^2)$
 
@@ -39,7 +62,7 @@ void InsertionSort(int A[], int N) {
 | $\Omega (n)$    | $\Theta (n^2)$     | $O(n^2)$         | ✅                  | ✅                |
 
 ```C title:BubbleSort.c fold
-void BubbleSort(int A[], int N){
+void BubbleSort(int A[], int N) {
 	const int l=0, r=N-1;
     int i, j;
     int temp;
@@ -79,7 +102,7 @@ void OptBubbleSort(int A[], int N) {
 ```
 
 ### Selection sort
-> Un algoritmo semplice basato su confronti che seleziona ripetutamente **l’elemento minimo** dalla parte non ordinata e lo **porta all’inizio**. Esegue il numero minimo di scambi ($O(n)$), ma il numero quadratico di confronti lo rende inefficiente su array grandi.  
+> Un algoritmo semplice basato su confronti che seleziona ripetutamente **l’elemento minimo** dalla parte non ordinata e lo **porta all’inizio**. Esegue il numero minimo di scambi $O(n)$, ma il numero quadratico di confronti lo rende inefficiente su array grandi.  
 > È in-place ma non stabile, il che ne limita l’uso pratico.
 
 | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
@@ -123,6 +146,16 @@ void SelectionSort(int A[], int N) {
 > $$h_k = \frac{3^k - 1}{2} \quad \quad (1,\ 4,\ 13,\ 40,\ 121,\ 364,\ \ldots)$$  
 > Nel caso peggiore, può arrivare a $O(n^{3/2})$.
 
+> [!NOTE]
+> $$
+\begin{array}{111}
+\textbf{Shell} && 1, \ 2, \ 4, \ 8, \ 16 \dots && O(n^2) \\
+\textbf{Hibbard} && 1, \ 3, \ 7, \ 15, \ 31 \dots && O(n^{3/2}) \\
+\textbf{Pratt} && 1, \ 2, \ 3, \ 4, \ 6, \ 8, \ 9, \ 12 \dots && O(n \log^2{n}) \\
+\textbf{Knuth} && 1, \ 4, \ 13, \ 40, \ 121 \dots && O(n^{3/2}) \\
+\textbf{Sedgewick} && 1, \ 5, \ 19, \ 41, \ 109, \ 209 \dots && O(n^{4/3})
+\end{array}$$
+
 ```C title:ShellSort.c fold
 void ShellSort(int A[], int N) {
 	const int l=0, r=N-1;
@@ -155,14 +188,14 @@ void ShellSort(int A[], int N) {
 
 ### Counting sort
 > Un algoritmo di ordinamento che **non si basa su confronti**, ma conta il numero di occorrenze di ogni valore unico. È ideale per insiemi di interi **con intervalli piccoli**, dove il valore massimo $k$ non è molto più grande del numero di elementi $n$.  
-> Ha complessità lineare, ma **non è in-place** e usa spazio extra $O(k)$. È stabile e spesso usato come sottoprocedura nel [[#Radix sort]].
+> Ha complessità lineare, ma **non è in-place** e usa spazio extra $O(k)$. È stabile e spesso usato nel [[#Radix sort]].
 
 | $\textbf{Best}$  | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ |
 | ---------------- | ------------------ | ---------------- | ------------------- | ----------------- |
 | $\Omega (n + k)$ | $\Theta (n + k)$   | $O(n + k)$       | ❌                  | ✅                |
 
 ```C title:CountingSort.c fold
-void CountingSort(int A[],int B[],int C[],int N,int k){  
+void CountingSort(int A[], int B[], int C[], int N, int k) {  
     const int l=0, r=N-1;
     int i;
     
@@ -175,8 +208,7 @@ void CountingSort(int A[],int B[],int C[],int N,int k){
     for (i = 1; i < k; i++)
         C[i] += C[i-1];  // occorrenze multiple
         
-    for (i = r; i >= l; i--) {
-        // posizionamento corretto elementi
+    for (i = r; i >= l; i--) {  // ordinamento
         B[C[A[i]] - 1] = A[i];
         C[A[i]]--;
     }
@@ -209,6 +241,36 @@ void radixSort(int A[], int B[], int C[], int D[], int n) {
 }
 ```
 
+```C title:CountingSortForRadix.c fold
+void CountingSort(int A[], int B[], int C[], int D[], int N, int step) {
+    const int l=0, r=N-1;
+    int i, weight=1;
+	
+    for (i = 0; i < step; i++)
+	    weight *= 10;  // calcolo di 10^step
+		
+    for (i = 0; i < 10; i++)
+	    C[i] = 0;
+		
+    for (i = l; i <= r; i++)
+	    D[i] = (A[i] / weight) % 10;  // identificazione colonna
+		
+    for (i = l; i <= r; i++)
+	    C[D[i]]++;  // occorrenze semplici
+		
+    for (i = 1; i < 10; i++)
+	    C[i] += C[i - 1];  // occorrenze multiple
+		
+    for (i = r; i >= l; i--) {  // ordinamento
+        B[C[D[i]] - 1] = A[i];
+        C[D[i]]--;
+    }
+	
+    for (i = l; i <= r; i++)
+	    A[i] = B[i];  // ricopiatura
+}
+```
+
 # Linearitmici
 > $O(n \log n)$
 
@@ -238,7 +300,9 @@ void BottomUpMergeSort(int A[], int B[], int N) {  // B vettore ausiliario
         }
     }
 }
+```
 
+```C title:Merge.c fold
 void Merge(int A[], int B[], int l, int q, int r, int m) {  
     int i, j, k;
     i = l;
