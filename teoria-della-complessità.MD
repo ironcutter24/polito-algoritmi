@@ -1,23 +1,3 @@
-| $\textbf{Algorithm}$     | $\textbf{Best}$ | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ | $\textbf{Notes}$                |
-| ------------------------ | ---------------------------------- | ------------------------------------- | -------------------- | ------------------- | ----------------- | ------------------------------- |
-| **Quadratic**        |                                    |                                       |                      |                     |                   |                                 |
-| **Insertion Sort**       | $\Omega(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Great for nearly-sorted data    |
-| **Bubble Sort**          | $\Omega(n)$                             | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ✅                | Easy but slow                   |
-| **Selection Sort**       | $\Omega(n^2)$                           | $Θ(n^2)$                              | $O(n^2)$             | ✅                  | ❌                | Simple but inefficient          |
-| **Shell Sort**           | $\Omega(n \log n)^*$                     | $Θ(n \log^2 n)^*$                      | $O(n^2)^*$            | ✅                  | ❌                | Depends on gap sequence         |
-| **Linear**           |                                    |                                       |                      |                     |                   |                                 |
-| **Counting Sort**        | $\Omega(n + k)$                         | $Θ(n + k)$                            | $O(n + k)$           | ❌                  | ✅                | Only for small integer ranges   |
-| **Radix Sort**           | $\Omega(nk)$                            | $Θ(nk)$                               | $O(nk)$              | ❌                  | ✅                | For fixed-length keys           |
-| **Linearithmic**     |                                    |                                       |                      |                     |                   |                                 |
-| **Bottom-Up Merge Sort** | $\Omega(n \log n)$                      | $Θ(n \log n)$                         | $O(n \log n)$        | ❌                  | ✅                | Iterative variant of Merge Sort |
-| ~~**Merge Sort**~~           | $\Omega(n \log n)$                      | $Θ(n \log n)$                         | $O(n \log n)$        | ❌                  | ✅                | Divide & conquer                |
-| ~~**Quick Sort**~~           | $\Omega(n \log n)$                      | $Θ(n \log n)$                         | $O(n^2)$             | ✅                  | ❌                | Fast but unstable               |
-| ~~**Heap Sort**~~            | $\Omega(n \log n)$                      | $Θ(n \log n)$                         | $O(n \log n)$        | ✅                  | ❌                | Always `O(n log n)`             |
-
-
-**Ordinamento in loco:** vettore di n dati + locazioni di memoria ausiliarie in numero fisso
-**Ordinamento stabile:** immutato l’ordinamento relativo di dati con ugual valore della chiave (l’ordine in uscita di dati con la stessa chiave è lo stesso dell’ordine in ingresso)
-
 ## Tipologie di problemi
 - Decisione (ammettono una risposta sì/no)
 - Verifica (data una soluzione, appurare che è davvero tale)
@@ -53,3 +33,16 @@
 		- e.g. Insertion sort, Selection sort, Exchange/Bubble sort
 - $n^3 \to$ cubico
 - $2^n \to$ esponenziale
+
+
+## 🧠 Strategie risolutive
+
+- **Basato sul confronto**  
+  L’algoritmo ordina gli elementi effettuando confronti binari tra di essi (es. `a < b`).  
+  **Esempi**: Quick Sort, Merge Sort, Heap Sort, Bubble Sort  
+  > ❗ **Limite inferiore teorico**: $\Omega (n \log{n})$
+
+- **Non basato sul confronto**  
+  L’algoritmo sfrutta proprietà specifiche degli input, come il fatto che siano interi in un intervallo noto.  
+  **Esempi**: Counting Sort, Radix Sort, Bucket Sort  
+ >  ✅ **Può essere più veloce di** $O(n \log{n})$ **in casi particolari**
