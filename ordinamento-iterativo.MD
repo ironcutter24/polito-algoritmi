@@ -1,15 +1,15 @@
 | $\textbf{Algorithm}$      | $\textbf{Best}$      | $\textbf{Average}$ | $\textbf{Worst}$ | $\textbf{In-place}$ | $\textbf{Stable}$ | $\textbf{Notes}$                |
 | ------------------------- | -------------------- | ------------------ | ---------------- | ------------------- | ----------------- | ------------------------------- |
 | **Quadratic**             |                      |                    |                  |                     |                   |                                 |
-| [[#Insertion sort]]       | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Great for nearly-sorted data    |
-| [[#Exchange / Bubble sort]]          | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Easy but slow                   |
-| [[#Selection sort]]       | $\Omega(n^2)$        | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ❌                | Simple but inefficient          |
-| [[#Shell sort]]           | $\Omega(n \log n)^*$ | $Θ(n \log^2 n)^*$  | $O(n^2)^*$       | ✅                  | ❌                | Depends on gap sequence         |
+| Insertion sort       | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Great for nearly-sorted data    |
+| Exchange / Bubble sort          | $\Omega(n)$          | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ✅                | Easy but slow                   |
+| Selection sort       | $\Omega(n^2)$        | $Θ(n^2)$           | $O(n^2)$         | ✅                  | ❌                | Simple but inefficient          |
+| Shell sort          | $\Omega(n \log n)^*$ | $Θ(n \log^2 n)^*$  | $O(n^2)^*$       | ✅                  | ❌                | Depends on gap sequence         |
 | **Linear**                |                      |                    |                  |                     |                   |                                 |
-| [[#Counting sort]]        | $\Omega(n + k)$      | $Θ(n + k)$         | $O(n + k)$       | ❌                  | ✅                | Only for small integer ranges   |
-| [[#Radix sort]]           | $\Omega(nk)$         | $Θ(nk)$            | $O(nk)$          | ❌                  | ✅                | For fixed-length keys           |
+| Counting sort        | $\Omega(n + k)$      | $Θ(n + k)$         | $O(n + k)$       | ❌                  | ✅                | Only for small integer ranges   |
+| Radix sort          | $\Omega(nk)$         | $Θ(nk)$            | $O(nk)$          | ❌                  | ✅                | For fixed-length keys           |
 | **Linearithmic**          |                      |                    |                  |                     |                   |                                 |
-| [[#Bottom-up Merge sort]] | $\Omega(n \log n)$   | $Θ(n \log n)$      | $O(n \log n)$    | ❌                  | ✅                | Iterative variant of Merge Sort |
+| Bottom-up Merge sort | $\Omega(n \log n)$   | $Θ(n \log n)$      | $O(n \log n)$    | ❌                  | ✅                | Iterative variant of Merge Sort |
 
 **🔄 In-place**  
 Vettore di n dati + locazioni di memoria ausiliarie in numero fisso
